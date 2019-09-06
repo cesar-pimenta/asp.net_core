@@ -1,3 +1,4 @@
+using core.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace core.Controllers
@@ -6,9 +7,10 @@ namespace core.Controllers
     [ApiController]
     public class AtributosController : Controller
     {
-        public AtributosController()
+        public readonly DataContext _context;
+        public AtributosController(DataContext context) 
         {
-            
+            _context = context ;
         }
         [HttpGet]
         public IActionResult Get()
